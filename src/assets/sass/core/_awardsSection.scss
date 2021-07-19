@@ -1,0 +1,91 @@
+.awardsSection {
+    position: relative;
+    height: 350px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row nowrap;
+    max-width: calc(1940px - (2 * 174px));
+    padding: {
+        left: 20px;
+        right: 20px;
+    };
+    background: linear-gradient(90deg, rgba(19, 19, 18, 0) 0%, #131312 22.02%, #131312 78.54%, rgba(19, 19, 18, 0) 100%);
+    margin: 320px auto;
+
+    @media (max-width: $width_lps) {
+        height: 800px;           
+        flex-flow: column nowrap;
+    }
+
+    h3 {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: $font_size_h2;
+        margin-bottom: 24px;
+        font-weight: 500;
+        position: absolute;
+        color: $color_grey_light;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+    @mixin awardSliders {
+        .awardSection__oscar-bafta--carousel__img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+            
+        .awardSection__oscar-bafta--carousel__content {
+
+            div {
+    
+                p:nth-child(1) {
+                    text-align: center;
+                }
+                        
+                p:nth-child(2) {
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: $color_grey_light;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        @media (max-width: 400px) {
+            width: 320px;
+        }
+
+        .js-arrow_container {
+
+            .js-carousel__arrow {
+                background-color: transparent;
+                border-radius: 50%;
+                background-image: url(../images/rectangle-animation-arrow.svg);
+                background-position-y: 49%;
+                background-position-x: -220%;
+                background-repeat: no-repeat;
+                transition: background 0.1s;
+                &:hover {
+                    background-position-x: -180%;
+                }
+                &:active {
+                    background-position-x: -100%;
+                }
+            }
+        }
+    }
+
+    .js-oscarCarousel {
+        @include awardSliders();
+    }
+
+    .js-baftaCarousel  {
+        @include awardSliders();
+    }
+}

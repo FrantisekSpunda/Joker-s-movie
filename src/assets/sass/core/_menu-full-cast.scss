@@ -1,0 +1,84 @@
+.menuActive__fullCast {
+    @include menuActive_blocks;
+
+    h2 {
+        margin-bottom: 120px;
+
+        @media (max-width: 474px) {
+            margin-bottom: 80px;
+        }
+    }
+
+    p {
+        width: 100%;
+        height: calc(100% - 120px - 120px);
+        overflow-x: hidden;
+        overflow-y: scroll;
+        
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: calc(100% - 180px - 120px);
+            top: 180px;
+            left: 0;
+            pointer-events: none;
+            background: linear-gradient(179.86deg, #060604 0.12%, rgba(6, 6, 4, 0.609375) 25.58%, rgba(6, 6, 4, 0) 49.99%, rgba(6, 6, 4, 0.6094) 72.86%, #060604 99.88%);
+
+            @media (max-width: 666px) {
+                background: linear-gradient(179.86deg, rgb(19, 19, 18) 0.12%, rgba(19, 19, 18, 0.609375) 25.58%, rgba(19, 19, 18, 0) 49.99%, rgba(19, 19, 18, 0.6094) 72.86%, rgb(19, 19, 18) 99.88%);;
+            }
+        }
+        
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media (max-width: 666px) {
+            position: relative;
+            height: 396px;
+
+            &::before {
+                top: 190px;
+                height: 410px;
+                position: fixed;
+
+                @media (max-width: 474px) {
+                    top: 150px;
+                }
+            }
+        }
+    }
+    
+    .menuActive__fullcast__lines {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%);
+        width: 100%;
+        height: 1px;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row nowrap;
+        padding: 0 64px;
+
+        .line {
+            width: 32px;
+            height: 100%;
+            background: $color_red;
+        }
+
+        @media (max-width: 1094px) {
+            padding: 0 8px;
+
+            .line {
+                width: 16px;
+            }
+        }
+
+        @media (max-width: 474px) {
+            display: none;
+        }
+    }
+}

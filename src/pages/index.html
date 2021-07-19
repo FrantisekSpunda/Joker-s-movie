@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+
+<!--Header-start---------->
+
+<!--Header-end------------>
+
+<!--Main-start------------>
+<main>
+    <header>
+        <img id="menuButton" src="./images/menu.svg" alt="">
+        <h2>joker</h2>
+    </header>
+
+    {% include "menuActive.html" %}
+
+    {% include 'landingView.html' %}
+
+    {% include 'trailerSection.html' %}
+
+    {% include 'aboutSection.html' %}
+
+    {% include 'awardsSection.html' %}
+
+    {% include 'historySection.html' %}
+
+    {% include 'footer.html' %}
+
+</main>
+
+</div>
+
+{% endblock %}

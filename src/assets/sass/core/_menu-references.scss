@@ -1,0 +1,33 @@
+.menuActive__references {
+    @include menuActive_blocks;
+    padding-bottom: 0;
+    
+    h2 {
+        margin-bottom: 120px;
+    }
+
+    .menuActive__references__links {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        
+        a {
+            text-transform: uppercase;
+            text-decoration: underline;
+        }
+    }
+
+    .menuActive__about__emails {
+        margin-bottom: 16px;
+        display: block;
+    }
+
+    .menuActive__references__footerImg {
+        position: absolute;
+        width: 90%;
+        bottom: 0;
+        left: 5%;
+    }
+}

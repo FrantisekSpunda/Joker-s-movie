@@ -1,0 +1,42 @@
+header {
+    position: absolute;
+    z-index: 200;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 50%;
+    margin-top: 35px;
+    padding-left: calc(100vw - 1746px);
+
+    @media (min-width: $width_hd) {
+        padding-left: 174px;
+    }
+
+    img {
+        width: 70px;
+        height: 14px;
+        padding-left: 20px;
+        cursor: pointer;
+        position: relative;
+        transition: transform 0.2s;
+
+        &:hover,
+        &:active {
+            transform: translateX(5px);
+        }
+    }
+
+    h2 {
+        transform: translateX(50%);
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 500;
+        color: $color_grey_light;
+        letter-spacing: $letter_spacing_special;
+
+        @media (max-width: $width_tb) {
+            display: none;
+        }
+    }
+}

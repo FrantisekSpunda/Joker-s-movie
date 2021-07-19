@@ -1,0 +1,157 @@
+.historySection {
+    position: relative;
+    width: 100%;
+
+    h2 {
+        text-transform: uppercase;
+        color: $color_grey_light;
+        font-weight: 500;
+        text-align: center;
+        z-index: 300;
+    }
+
+    .historySection__cont {
+        position: relative;
+        height: 120vw;
+        width: 100%;
+        top: -300px;
+
+        .historySection__cont-bg {
+            position: -webkit-sticky;
+            position: sticky;
+            width: 70%;
+            transform: translateX(20%);
+            top: -400px;
+            z-index: 200;
+            
+            @media (max-width: $width_lpl) {
+                width: 100%;
+                transform: translateX(0);
+                top: -500px;
+            }
+
+            @media (max-width: $width_lps) {
+                width: 100%;
+                top: 5%;
+                position: absolute;
+            }
+        }
+
+        .historySection__cont-in {
+            position: absolute;
+            top: 500px;
+            z-index: 300;
+            width: 100%;
+            z-index: 300;
+
+            .historySection__cont-in-line {
+                position: relative;
+                width: 60%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .film {
+                position: absolute;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-between;
+                align-items: center;
+                top: 0;
+                left: 50%;
+                width: 10vw;
+
+                @media (min-width: 1900px) {
+                    opacity: 0;
+                }
+                
+                img {
+                    margin-bottom: 8px;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                p {
+                    min-width: fit-content;
+                    text-align: center;
+                }
+
+                &:nth-child(2) {
+                    transform: translate(-420%, -5vw);
+                }
+
+                &:nth-child(3) {
+                    transform: translate(320%, 7vw);
+                }
+
+                &:nth-child(4) {
+                    transform: translate(-370%, 28vw);
+                }
+
+                &:nth-child(5) {
+                    transform: translate(260%, 41vw);
+                }
+
+                &:nth-child(6) {
+                    transform: translate(-50%, 70vw);
+                }
+            }
+        }
+    }
+
+    @media (max-width: $width_lps) {
+        .historySection__cont {
+        height: 140vw;
+        }
+    }
+    
+    @media (max-width: 740px) {
+        .historySection__cont {
+            position: relative;
+            height: auto;
+            margin-bottom: 160px;
+            width: 100%;
+            top: 00px;
+
+            .historySection__cont-bg {
+                display: none;
+            }
+
+            .historySection__cont-in {
+                position: static;
+                display: flex;
+                flex-flow: row wrap;
+                padding: 20px;
+                gap: 20px;
+
+
+                .historySection__cont-in-line {
+                    display: none;
+
+                }
+
+                .film {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    transform: translate(0, 0) !important;
+                    width: calc(33.3% - 15px);
+
+                    img {
+                        width: 100%;
+                        height: 50vw;
+                    }
+
+                    @media (max-width: $width_ml) {
+                        width: calc(50% - 10px);
+
+                        img {
+                            height: 60vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

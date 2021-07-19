@@ -1,0 +1,138 @@
+.trailersSection {
+    position: relative;
+    z-index: 200;
+    max-width: calc(1940px - (2 * 174px));
+    padding: {
+        left: 20px;
+        right: 20px;
+    };
+    margin: 0 auto;
+
+    h2 {
+        text-transform: uppercase;
+        font-weight: 500;
+        color: $color_grey_light;
+        margin-bottom: 24px;
+    }
+
+    @mixin trailerSection-gradient () {
+        content: '';
+        position: absolute;
+        top: calc(38px + 24px);
+        display: block;
+        width: 200px;
+        height: 100%;
+        z-index: 200;
+        background: linear-gradient(90deg, #060604 30%, rgba(6, 6, 4, 0.87) 45%, rgba(6, 6, 4, 0) 100%);
+    }
+
+    .classForcarousel {
+
+        div:nth-child(1) {
+            div {
+                @media (max-width: 400px) {
+                    h3 {
+                        display: none;
+                    }
+                    img {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        .js-arrow_container {
+
+            .classForArrows {
+                border-radius: 50%;
+                background-image: url(../images/rectangle-animation-arrow-trailer-slider.svg);
+                background-position-y: 49%;
+                background-position-x: -220%;
+                background-repeat: no-repeat;
+                transition: background 0.1s;
+                &:hover {
+                    background-position-x: -200%;
+                }
+                &:active {
+                    background-position-x: -100%;
+                }
+            }
+
+            
+
+            @media (max-width: 1630px) {
+                left: 20px;
+                width: 930px;
+
+                .classForArrows {
+                    border-radius: 50%;
+                    background: $color_grey_dark;
+                    height: 35px;
+                    width: 35px;
+                    transition: background 0.1s;
+                    margin: 0 10px;
+
+                    img {
+                        position: relative;
+                        left: -2px;
+                        height: 25px;
+                    }
+
+                    &:hover {
+                        background-position-x: -200%;
+                    }
+                    &:active {
+                        background-position-x: -100%;
+                    }
+                }
+            }
+
+            @media (max-width: 976px) {
+                width: calc(100% - 40px);
+            }
+
+            @media (max-width: 400px) {
+                top: 63%;
+                transform: translateY(-50%);
+                .classForArrows {
+                    zoom: 0.7;
+                }
+            }
+        }
+
+        & > *:nth-child(1){
+
+            & > div {
+
+                img {
+                    height: 90%;
+                    object-fit: cover;
+                }
+                h3 {
+                    padding-top: 8px;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    color: $color_grey_light;
+                    text-align: right;
+                }
+            }
+        }
+
+        @media (max-width: 1070px) {
+            width: 100%;
+
+            .js-pagination__container {
+                top: 80%;
+                width: 60%;
+                left: 50%;
+                transform: translateX(-50%);
+                flex-flow: row nowrap;
+
+                .classForArrows {
+                    width: 19%;
+                    height: 1px;
+                }
+            }
+        }
+    }
+}

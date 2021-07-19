@@ -1,0 +1,49 @@
+// --- Colors ---
+
+$color_white: #F2F2F2;
+$color_grey_darker: #060604;
+$color_grey_dark: #131312;
+$color_grey_light: #707070;
+$color_red: #BE4A4E;
+
+
+// --- Base Font ---
+
+$font_poppins: normal normal 300 18px/1.6 'Poppins',sans-serif;
+$font_montserrat: normal normal 400 18px/1.6 'Montserrat',sans-serif;
+
+$letter_spacing_special: 0.15em;
+
+@mixin base_font {
+    font: $font_montserrat;
+    color: $color_white;
+    text-decoration: none;
+    font-size: $font_size_base;
+}
+
+
+// --- Font sizes ---
+
+$font_size_extra: 350px;
+$font_size_h1: 200px;
+$font_size_h2: 24px;
+$font_size_h3: 18px;
+$font_size_base: 18px;
+
+
+// --- Widths for media query
+
+$width_hd: 1920px;
+$width_lpl: 1440px;
+$width_lps: 1024px;
+$width_tb: 768px;
+$width_ml: 425px;
+$width_mm: 375px;
+$width_ms: 320px;
+// - custom
+$width_1464: 1464px;
+
+// --- Grids
+
+$grid1: 194px;
+$grid2: 389px;

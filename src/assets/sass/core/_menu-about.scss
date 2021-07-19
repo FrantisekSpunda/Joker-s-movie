@@ -1,0 +1,52 @@
+.menuActive__about {
+    @include menuActive_blocks;
+
+    h2 {
+        margin-bottom: 120px;
+
+        @media (max-width: 474px) {
+            margin-bottom: 80px;
+        }
+    }
+
+    & > p {
+        margin-bottom: 40px;
+        height: 198px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding-right: 5px;
+    }
+
+    .menuActive__about__tags {
+            display: flex;
+            justify-content: space-between;
+            max-width: 311px;
+
+            .tag {
+                color: $color_red;
+                background: $color_grey_dark;
+                border-radius: 50px;
+                padding: {
+                    left: 8px;
+                    right: 8px;
+                };
+
+                &:nth-child(1) { background: linear-gradient(90deg, rgba(19, 19, 18, 0) 0%, #131312 47.4%) }
+
+                &:nth-child(3) { background: linear-gradient(90deg, #131312 31.77%, rgba(19, 19, 18, 0) 83.85%) }
+            }
+    }
+
+    .menuActive__about__rating {
+        margin-top: 10vh;
+        width: fit-content;
+        color: $color_grey_light;
+        margin-bottom: 40px;
+        bottom: 0;
+
+        span {
+            color: $color_red;
+            font-weight: 500;
+        }
+    }
+}
