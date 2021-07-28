@@ -1,12 +1,40 @@
 .trailersSection {
     position: relative;
-    z-index: 200;
     max-width: calc(1940px - (2 * 174px));
     padding: {
         left: 20px;
         right: 20px;
     };
     margin: 0 auto;
+    z-index: 300;
+
+    #trailerSection_video {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.781);
+        z-index: 2000;
+        backdrop-filter: blur(5px);
+
+        iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60vw;
+            height: calc(60vw * 0.6);
+            transform: translate(-50%, -50%);
+        }
+
+        #close_video {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+    }
 
     h2 {
         text-transform: uppercase;
@@ -30,11 +58,59 @@
 
         div:nth-child(1) {
             div {
+                .image-cont {
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    position: relative;
+                    background-color: $color_red;
+                    .image-cont_img {
+                        width: 100%;
+                        height: 100%;
+                        transition: 0.2s;
+                        filter: grayscale(0) brightness(100%);
+
+                        &:hover,
+                        &:active {
+                            transform: translate(5px, -5px);
+                            filter: grayscale(0.8) brightness(50%);
+                        }
+                    }
+
+                    .image-cont_play {
+                        position: absolute;
+                        pointer-events: none;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: 100;
+                        width: 30px;
+                        height: 30px;
+                        transition: 0.2s;
+                        opacity: 0;
+                    }
+                    
+                    .image-cont_img:hover + .image-cont_play {
+                        transform: translate(calc(-50% + 5px), calc(-50% - 5px));
+                        opacity: 1;
+                    }
+
+                    .image-cont_img:active + .image-cont_play {
+                        transform: translate(calc(-50% + 5px), calc(-50% - 5px));
+                        opacity: 1;
+                        width: 35px;
+                        transition: width 0.1s;
+                        transition: height 0.1s;
+                        height: 35px;
+                    }
+                }
+
+
                 @media (max-width: 400px) {
                     h3 {
                         display: none;
                     }
-                    img {
+                    .image-cont {
                         height: 100%;
                     }
                 }
@@ -42,8 +118,10 @@
         }
 
         .js-arrow_container {
+            pointer-events: none;
 
             .classForArrows {
+                pointer-events: all;
                 border-radius: 50%;
                 background-image: url(../images/rectangle-animation-arrow-trailer-slider.svg);
                 background-position-y: 49%;
